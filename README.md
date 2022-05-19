@@ -8,7 +8,7 @@ A repository for WalkXR, an application built by a team at The Verse.
 - User clicks a button that allows them to take a survey in which they rate their feelings of harmony, liberate, cleanse and resolve. 
 - These ratings are recorded in a database 
 
-*** Optional Experiences *** 
+***Optional Experiences*** 
 - User is able to login and their ratings are recorded per their user id in a database
 
 
@@ -20,10 +20,10 @@ A repository for WalkXR, an application built by a team at The Verse.
 - Create client javascript to handle client side input, such as button clicks (in progress) 
 - Create server side tools to handle requests from the client and store the data in the database (in progress) 
 
-*** Optional Additions *** 
+***Optional Additions*** 
 - Create a login form using HTML and CSS (in progress) 
 - Create a table in the database to store user info (done)
 - Write JS to register a new user 
 - Write JS to authenticate an existing user 
 - Write JS to return access token upon login (in order to maintain a session for a user) 
-- 
+
