@@ -3,10 +3,10 @@ const express = require('express')
 const app = express();
 const port = 3000;
 
-var harmony_count = 0;
-var grief_count = 0;
-var resolve_count = 0;
-var liberate_count = 0; 
+var harmony_clicks = 0;
+var grief_clicks = 0;
+var resolve_clicks = 0;
+var liberate_clicks = 0; 
 
 app.use(express.static('public'));
 
