@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/anyalauria/WalkXR/issues"
   },
-  "homepage": "https://github.com/anyalauria/WalkXR#readme"
+  "homepage": "https://github.com/anyalauria/WalkXR#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }

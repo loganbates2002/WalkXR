@@ -11,7 +11,7 @@ function harmony_rate() {
     //console.log("checking client count", response);
   };
 
-function cleanse_rate() {
+function grief_rate() {
     fetch("/cleanse_rate").then(response => response.json()).then(data => document.getElementById("clicks").innerHTML = data['clicks']);
   
     //console.log("checking client count", response);
