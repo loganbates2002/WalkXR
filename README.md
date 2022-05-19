@@ -14,16 +14,26 @@ A repository for WalkXR, an application built by a team at The Verse.
 
 ### Prototype Requirements ### 
 
-- Create a database to store ratings (done) 
-- Create a landing webpage to store list of walks (remaining) 
-- Create a webpage/form for taking the surveys (remaining) 
-- Create client javascript to handle client side input, such as button clicks (in progress) 
-- Create server side tools to handle requests from the client and store the data in the database (in progress) 
+- Create a database to store ratings
+  - Status: Done 
+- Create a landing webpage to store list of walks 
+  - Status: In Progress  
+- Create a webpage/form for taking the surveys 
+  - Status: Remaining
+- Create client javascript to handle client side input, such as button clicks 
+  - Status: In Progress
+- Create server side tools to handle requests from the client and store the data in the database 
+  - Status: In Progress
 
 ***Optional Additions*** 
-- Create a login form using HTML and CSS (in progress) 
-- Create a table in the database to store user info (done)
+- Create a login form using HTML and CSS 
+  - Status: In Progress 
+- Create a table in the database to store user info 
+  - Status: Done 
 - Write JS to register a new user 
+  - Status: Remaining
 - Write JS to authenticate an existing user 
+  - Status: Remaining
 - Write JS to return access token upon login (in order to maintain a session for a user) 
+  - Status: Remaining
 
