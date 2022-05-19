@@ -17,7 +17,7 @@ A repository for WalkXR, an application built by a team at The Verse.
 - Create a database to store ratings
   - Status: Done 
 - Create a landing webpage to store list of walks 
-  - Status: In Progress  
+  - Status: Done 
 - Create a webpage/form for taking the surveys 
   - Status: Remaining
 - Create client javascript to handle client side input, such as button clicks 
