@@ -24,4 +24,6 @@ function resolve_rate() {
   };
 
 
-  
+function submit() {
+    fetch("/submit").then(response => console.log(response));
+};
