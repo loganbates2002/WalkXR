@@ -3,7 +3,6 @@ const express = require('express')
 const app = express();
 const port = 3000;
 
-
 var mysql = require("mysql")
 var con = mysql.createConnection({
    connectionLimit: 100,
@@ -22,13 +21,6 @@ var liberate_clicks = 0;
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  harmony_clicks = 0;
-  grief_clicks = 0;
-  resolve_clicks = 0;
-  liberate_clicks = 0; 
-  res.send();
-});
 
 app.get('/harmony_rate', (req, res) => {
   harmony_clicks++;
