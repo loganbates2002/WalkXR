@@ -28,12 +28,13 @@ var grief_clicks = 0;
 var resolve_clicks = 0;
 var liberate_clicks = 0; 
 
-//app.use(express.static('public'));
+app.use(express.static('public'));
 
+/*
 app.get('/', function(request, response) {
 	// Render login template
 	response.sendFile(path.join(__dirname + '/login.html'));
-});
+}); */
 
 app.get('/home', function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
