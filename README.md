@@ -31,7 +31,7 @@ A repository for WalkXR, an application built by a team at The Verse.
 - Create a table in the database to store user info 
   - Status: Done 
 - Write JS to register a new user 
-  - Status: Remaining
+  - Status: Done
 - Write JS to authenticate an existing user 
   - Status: Remaining
 - Write JS to return access token upon login (in order to maintain a session for a user) 
