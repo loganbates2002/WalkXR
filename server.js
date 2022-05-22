@@ -35,6 +35,10 @@ app.get('/', function(request, response) {
 	response.sendFile(path.join(__dirname + '/login.html'));
 });
 
+app.get('/home', function(req, res) {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
 app.post("/createUser", async (req,res) => {
   const user = req.body.username
   const hashedPwd = await bcrypt.hash(req.body.password,10);
@@ -62,11 +66,13 @@ app.post("/createUser", async (req,res) => {
         if (err) throw (err);
         console.log("-----> Created new user");
         console.log(result.insertId);
-        res.sendStatus(201);
+        res.redirect("/home");
       });
     }
   });
 });
+
+
 
 app.get('/harmony_rate', (req, res) => {
   harmony_clicks++;
