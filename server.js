@@ -1,17 +1,7 @@
 const express = require('express')
-const bcrypt = require("bcrypt")
+
 const app = express();
 const port = 3000;
-const path = require('path');
-const session = require('express-session');
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
 
 var mysql = require("mysql")
 var con = mysql.createConnection({
@@ -23,50 +13,14 @@ var con = mysql.createConnection({
    port: "3306"             // port name, "3306" by default
 })
 
+
 var harmony_clicks = 0;
 var grief_clicks = 0;
 var resolve_clicks = 0;
 var liberate_clicks = 0; 
 
-//app.use(express.static('public'));
+app.use(express.static('public'));
 
-app.get('/', function(request, response) {
-	// Render login template
-	response.sendFile(path.join(__dirname + '/login.html'));
-});
-
-app.post("/createUser", async (req,res) => {
-  const user = req.body.username
-  const hashedPwd = await bcrypt.hash(req.body.password,10);
-
-  console.log(user);
-  console.log(hashedPwd);
-
-  var sql_searchUser = "SELECT * FROM users WHERE username = ?";
-  var query_searchUser = mysql.format(sql_searchUser,[user]);
-  
-  var sql_insertUser = "INSERT INTO users VALUES (0,?,?)";
-  var query_insertUser = mysql.format(sql_insertUser,[user,hashedPwd]);
-  
-  await con.query(query_searchUser, async (err, result) => {
-    if (err) throw (err);
-    console.log("------> Search results");
-    console.log(result.length);
-
-    if (result.length != 0){
-      console.log("-----> user already exists");
-      res.sendStatus(409);
-    }
-    else {
-      await con.query(query_insertUser, (err,result) => {
-        if (err) throw (err);
-        console.log("-----> Created new user");
-        console.log(result.insertId);
-        res.sendStatus(201);
-      });
-    }
-  });
-});
 
 app.get('/harmony_rate', (req, res) => {
   harmony_clicks++;
@@ -97,9 +51,9 @@ app.get('/submit', (req, res) => {
   con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
-    var sql_ratings = "INSERT INTO ratings (liberate, grief, harmony, resolve) VALUES (?,?,?,?)";
-    var ratings_query = mysql.format(sql_ratings,[liberate_clicks,grief_clicks,harmony_clicks,resolve_clicks])
-    con.query(ratings_query, function (err, result) {
+    var sql = "INSERT INTO ratings (liberate, grief, harmony, resolve) VALUES (?,?,?,?)";
+    var myquery = mysql.format(sql,[liberate_clicks,grief_clicks,harmony_clicks,resolve_clicks])
+    con.query(myquery, function (err, result) {
       if (err) throw err;
       console.log("1 record inserted");
     });
