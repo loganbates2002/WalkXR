@@ -67,52 +67,86 @@ app.post("/createUser", async (req,res) => {
         if (err) throw (err);
         console.log("-----> Created new user");
         console.log(result.insertId);
+        req.session.username = user;
         res.redirect("/home");
       });
     }
   });
 });
 
+app.post("/authenticate", async (req,res) => {
+  const user = req.body.username
+  const password = req.body.password;
+
+  var sql_searchUser = "SELECT * FROM users WHERE username = ?";
+  var query_searchUser = mysql.format(sql_searchUser,[user]);
+
+  await con.query(query_searchUser, async (err, result) => {
+    if (err) throw (err);
+    console.log("------> Search results");
+    console.log(result.length);
+
+    if (result.length == 0){
+      console.log("-----> user does not exist");
+      res.sendStatus(404);
+    }
+    else {
+      const hashedPwd = result[0].password
+
+      if (await bcrypt.compare(password, hashedPwd)){
+        console.log("----> login successful");
+        req.session.username = user;
+        res.redirect("/home");
+      }
+      else{
+        console.log("----> password incorrect");
+        res.send("Password incorrect!");
+      }
+    }
+  });
+});
 
 
 app.get('/harmony_rate', (req, res) => {
   harmony_clicks++;
-  console.log("request to increment", harmony_clicks)
+  console.log("request to increment", harmony_clicks);
   res.send({'clicks':harmony_clicks});
 });
 
 app.get('/grief_rate', (req, res) => {
   grief_clicks++;
-  console.log("request to increment", grief_clicks)
+  console.log("request to increment", grief_clicks);
   res.send({'clicks':grief_clicks});
 });
 
 app.get('/resolve_rate', (req, res) => {
   resolve_clicks++;
-  console.log("request to increment", resolve_clicks)
+  console.log("request to increment", resolve_clicks);
   res.send({'clicks':resolve_clicks});
 });
 
 app.get('/liberate_rate', (req, res) => {
   liberate_clicks++;
-  console.log("request to increment", liberate_clicks)
+  console.log("request to increment", liberate_clicks);
   res.send({'clicks':liberate_clicks});
 });
 
 
 app.get('/submit', (req, res) => {
-  con.connect(function(err) {
+  var sql_searchUser = "SELECT * FROM users WHERE username = ?";
+  var query_searchUser = mysql.format(sql_searchUser,[req.session.username]);
+  con.query(query_searchUser, function (err, result) {
     if (err) throw err;
-    console.log("Connected!");
-    var sql_ratings = "INSERT INTO ratings (liberate, grief, harmony, resolve) VALUES (?,?,?,?)";
-    var ratings_query = mysql.format(sql_ratings,[liberate_clicks,grief_clicks,harmony_clicks,resolve_clicks])
+    console.log(result[0].userID);
+
+    var sql_ratings = "INSERT INTO ratings (liberate, grief, harmony, resolve,fk_userID) VALUES (?,?,?,?,?)";
+    var ratings_query = mysql.format(sql_ratings,[liberate_clicks,grief_clicks,harmony_clicks,resolve_clicks,result[0].userID]);
     con.query(ratings_query, function (err, result) {
       if (err) throw err;
       console.log("1 record inserted");
     });
-  });
-    
-  });
+  });    
+});
 
 
 
