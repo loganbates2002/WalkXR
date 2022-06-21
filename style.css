@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.login-page {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 33%;
+}
+
+.login-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family: "Roboto";
+}
+
+.register-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.login {
+    position: fixed;
+    left: 30%;
+}
+
+.register {
+    position: fixed;
+    left: 55%;
+}
+
+.vl {
+    border-left: 2px solid grey;
+    height: 400px;
+    position: fixed;
+    left: 50%;
+    top: 100px;
+}
+
+.input {
+    border: none;
+}
+  
