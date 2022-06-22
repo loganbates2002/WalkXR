@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     position: fixed;
-    top: 33%;
+    top: 23%;
 }
 
 .login-info {
@@ -13,6 +13,17 @@
 }
 
 .title {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.words {
+    font-size: 20px;
+}
+
+* {
     font-family: "Roboto";
 }
 
@@ -23,17 +34,17 @@
 
 .login {
     position: fixed;
-    left: 30%;
+    left: 15%;
 }
 
 .register {
     position: fixed;
-    left: 55%;
+    left: 65%;
 }
 
 .vl {
     border-left: 2px solid grey;
-    height: 400px;
+    height: 530px;
     position: fixed;
     left: 50%;
     top: 100px;
@@ -41,5 +52,22 @@
 
 .input {
     border: none;
+    outline: none;
 }
-  
+
+
+.line {
+    width:330px;
+    height:1.5px;
+    border-width:0;
+    color:gray;
+    background-color:gray;
+}
+
+.submit-box {
+    width: 120px;
+    height: 50px;
+    font-size: 20px;
+    margin: auto;
+    margin-top:20px;
+}

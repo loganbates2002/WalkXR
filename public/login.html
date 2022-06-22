@@ -14,10 +14,14 @@
 			<h1 class="title">Login</h1>
 			<form action="/authenticate" method="post" class="login-info">
 				<label for="username"> </label>
-				<input type="text" name="username" placeholder="Username" id="username" required class="input"/>
+				<p class="words">Username</p>
+				<input type="text" name="username" id="username" required class="input"/>
+				<hr class="line">
 				<label for="password"> </label>
-				<input type="password" name="password" placeholder="Password" id="password" required />
-				<input type="submit" value="Login" />
+				<p class="words">Password</p>
+				<input type="password" name="password" id="password" required class="input"/>
+				<hr class="line">
+				<input type="submit" value="Login" class="submit-box"/>
 			</form>
 		</div>
 		<div class="vl"></div>
@@ -25,10 +29,14 @@
 			<h1 class="title">Register</h1>
 			<form action="/createUser" method="post" class="register-info">
 				<label for="username"> </label>
-				<input type="text" name="username" placeholder="Username" id="username" required />
+				<p class="words">Username</p>
+				<input type="text" name="username" id="username" required class="input"/>
+				<hr class="line">
 				<label for="password"> </label>
-				<input type="password" name="password" placeholder="Password" id="password" required />
-				<input type="submit" value="Register" />
+				<p class="words">Password</p>
+				<input type="password" name="password" id="password" required class="input"/>
+				<hr class="line">
+				<input type="submit" value="Register" class="submit-box"/>
 			</form>
 		</div>
 	</div>
