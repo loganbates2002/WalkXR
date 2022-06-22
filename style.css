@@ -1,5 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+* {
+    font-family: "Roboto";
+}
+
+.welcome-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+button {
+    height: 50px;
+    width: 150px;
+}
+
+.welcome {
+    font-size: 50px;
+}
+
 .login-page {
     display: flex;
     flex-direction: row;
@@ -21,10 +48,6 @@
 
 .words {
     font-size: 20px;
-}
-
-* {
-    font-family: "Roboto";
 }
 
 .register-info {
