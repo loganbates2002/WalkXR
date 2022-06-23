@@ -94,3 +94,69 @@ button {
     margin: auto;
     margin-top:20px;
 }
+
+.survey-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.survey {
+    font-size: 50px;
+    width: 70%
+}
+
+.survey-title {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.survey-description {
+    font-size: 25px;
+    font-weight: 100;
+    margin-bottom: 50px;
+}
+
+.survey-section {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    margin-left: 100px;
+}
+
+.rating-title {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.count-area {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.click-number {
+    font-size: 25px;
+}
+
+.survey-count-box {
+    width: 50px;
+    height: 40px;
+    font-size: 30px;
+    margin: auto;
+    margin-left: 40px;
+    margin-right: 80px;
+    border: none;
+}
+
+.spacer {
+    margin: 100px;
+}
