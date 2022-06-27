@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="../main.js"></script>
+        <link href="/style.css" rel="stylesheet" type="text/css" />
+        <title> Survey </title>
+    </head>
+
+    <body>
+        <div class="survey-page">
+            <div class="survey">
+                <h1 class="survey-title">Post Survey</h1>
+                <h3 class="survey-description"><em>After watching this video...</em></h3>
+                <h3 class="rating-title"> What levels of &nbsp; <em>liberation</em> &nbsp; do you feel</h3>
+                <div class="sliderContainer">
+                  <input type="range" min="1" max="5" value="3" step="1" class="slider" id="sliderRange" list="ticks">
+                </div>
+                <div class="slider-section">
+                  <h3 class="slider-value-description">Weak</h3>
+                  <h3 class="slider-value-description">Neutral</h3>
+                  <h3 class="slider-value-description">Strong</h3>
+                </div>
+                <div class="slider-section">
+                  <button type="button" class="circular-button">1</button>
+                  <button type="button" class="circular-button">2</button>
+                  <button type="button" class="circular-button">3</button>
+                  <button type="button" class="circular-button">4</button>
+                  <button type="button" class="circular-button">5</button>
+                </div>
+                <div class="slider-section">
+                  <h3 class="slider-value-description">Not liberate</h3>
+                  <h3 class="slider-value-description">Very liberate</h3>
+                </div>
+                
+                <div class="count-area">
+                    <button type="button" onClick="submit()" class="submit-box"> Submit </button>
+                </div>
+                <div class="spacer"></div>
+            </div>
+        </div>
+    </body>
+</html>
