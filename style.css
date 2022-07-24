@@ -25,6 +25,51 @@ button {
 
 .welcome {
     font-size: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 30px;
+    font-weight: 900;
+}
+
+.login-button {
+    position: absolute;
+    top: 0;
+    right: 0vw;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+.choices-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.choice-title {
+    font-weight: bold;
+    left: flex-start;
+    margin-left: 20px;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+}
+
+.choices-row {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+}
+
+.image-choice {
+    display: flex;
+}
+
+.image-choice-png {
+    width: 200px;
+    margin: 20px 30px;
 }
 
 .login-page {
